@@ -7,7 +7,7 @@
 #include <V2LED.h>
 #include <V2MIDI.h>
 
-V2DEVICE_METADATA("com.acpad.strip", 2, "versioduo:samd:itsybitsy");
+V2DEVICE_METADATA("com.acpad.strip", 3, "versioduo:samd:itsybitsy");
 
 static constexpr uint16_t n_leds = 41;
 static V2LED::WS2812 LED(n_leds, 5, &sercom2, SPI_PAD_3_SCK_1, PIO_SERCOM);
@@ -50,7 +50,7 @@ private:
       return;
 
     // Read incoming message.
-    JsonDocumentjson;
+    JsonDocument json;
     if (deserializeJson(json, buffer + 2, len - 1))
       return;
 
