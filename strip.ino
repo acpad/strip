@@ -50,7 +50,7 @@ private:
       return;
 
     // Read incoming message.
-    StaticJsonDocument<4096> json;
+    JsonDocumentjson;
     if (deserializeJson(json, buffer + 2, len - 1))
       return;
 
